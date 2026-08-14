@@ -21,9 +21,17 @@
 	  // Variable globale pour stocker une référence vers la fenêtre ouverte
 	  var fenetreOuverte;
 
-	  function ouvrirFenetre() {
+	  function ouvrirFenetreBPS() {
 		fenetreOuverte = window.open("https://chrunancy.sharepoint.com/sites/PTA802/Documents%20partages/Forms/AllItems.aspx?FolderCTID=0x01200044F1EBC4068CE74CA5A9E18846B7DF99&id=%2Fsites%2FPTA802%2FDocuments%20partages%2FM%C3%A9trologie%20Qualit%C3%A9%2FCahier%20de%20vie%2FAtellica");
 		window.open("file://servicefichiers_gr1/PTA$/TECHNICIENS/BPS/Erwan/Documents/RSQM2.0/BPS.html");
+		setTimeout("fermerFenetreOuverte();",2000);
+	  }
+	  function fermerFenetreOuverte() {
+		fenetreOuverte.close();
+	  }
+	  function ouvrirFenetreHEMATO() {
+		//fenetreOuverte = window.open("https://chrunancy.sharepoint.com/sites/PTA802/Documents%20partages/Forms/AllItems.aspx?FolderCTID=0x01200044F1EBC4068CE74CA5A9E18846B7DF99&id=%2Fsites%2FPTA802%2FDocuments%20partages%2FM%C3%A9trologie%20Qualit%C3%A9%2FCahier%20de%20vie%2FAtellica");
+		window.open("file://servicefichiers_gr1/PTA$/TECHNICIENS/BPS/Erwan/Documents/RSQM2.0/HEMATO.html");
 		setTimeout("fermerFenetreOuverte();",2000);
 	  }
 	  function fermerFenetreOuverte() {
@@ -35,10 +43,10 @@
 			<div class="bloc-centre">
 			<div class="titre">PTA</div>
 			<div class="BPS">
-				<div class="btn_bps" value="BPS" onclick="ouvrirFenetre();"><font color="black">BPS</font></div>
+				<div class="btn_bps" value="BPS" onclick="ouvrirFenetreBPS();"><font color="black">BPS</font></div>
 			</div>
 			<div class="Hémato">
-				<div class="btn_hemato" value="HEMATO" onclick='window.location.href="file://servicefichiers_gr1/PTA$/TECHNICIENS/BPS/Erwan/Documents/RSQM2.0/HEMATO.hmtl"'>
+				<div class="btn_hemato" value="HEMATO" onclick="ouvrirFenetreHEMATO();">
 					<div class="texte"><font color="white">HEMATO</font></a></div>
 				</div>
 			</div>
